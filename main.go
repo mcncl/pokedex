@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"time"
 )
 
 const (
@@ -22,6 +23,12 @@ func readInput() *bufio.Reader {
     return input
 }
 
+func commandExit() {
+    fmt.Print("Quitting Pokedex...\n")
+    time.Sleep(1 * time.Second)
+    os.Exit(0)
+}
+
 func main() {
     commands := map[string]cliCommand{
         "help": {
@@ -34,9 +41,7 @@ func main() {
         "quit": {
             name: "quit",
             description: "Quit the application",
-            callback: func() {
-                os.Exit(0)
-            },
+            callback: commandExit,
         },
     }
 
