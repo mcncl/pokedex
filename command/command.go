@@ -1,8 +1,7 @@
 package command
 
 type CliCommand struct {
-    name string
-    description string
-    callback func()
+	Name string
+    Description string
+    Callback func()
 }
-

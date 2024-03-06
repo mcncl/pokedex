@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"github.com/mcncl/pokedex/command"
+	"github.com/mcncl/pokedex/help"
 	"os"
 	"strings"
 	"time"
@@ -25,21 +26,6 @@ func commandExit() {
 }
 
 func main() {
-	commands := map[string]CliCommand{
-		"help": {
-			name:        "help",
-			description: "Show help",
-			callback: func() {
-				fmt.Print("help called\n")
-			},
-		},
-		"quit": {
-			name:        "quit",
-			description: "Quit the application",
-			callback:    commandExit,
-		},
-	}
-
 	for {
 		input := readInput()
 		fmt.Printf("%s > ", appName)
